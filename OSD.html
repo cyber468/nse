@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nmap OS Detection Script</title>
+    <style>
+        body {
+            font-family: Segoe UI;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 10px;
+        }
+        
+        code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nmap OS Detection Script</h1>
+    <p>This Lua script uses the <code>nmap</code> command with the <code>-O</code> option to detect the operating system of a target host. It does this by executing the <code>nmap</code> command on the specified host and parsing the output for the detected
+        operating system information.</p>
+    <h2>Usage</h2>
+    <p>To use this script, first ensure that you have Nmap and the Nmap Scripting Engine installed on your system. Then, save the script as a file with the extension <code>.nse</code>. You can then run the script using the following command:</p>
+    <pre>nmap  --script &lt;path/to/script.nse&gt; target(s)&gt;</pre>
+    <p>Replace &lt;target(s)&gt; with the ports and targets you want to scan, respectively. You can also use the <code>-A</code> option to enable aggressive scanning, which can improve OS detection accuracy. Here's an example:</p>
+    <pre>nmap --script osd.nse example.com</pre>
+    <h2>Sample Output</h2>
+    <pre>
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-30 03:54 EDT
+Nmap scan report for example.com
+Host is up (0.00062s latency).
+
+PORT   STATE SERVICE
+80/tcp open  http
+|_osd: The OS is Linux
+
+
+Nmap done: 1 IP address (1 host up) scanned in 2.23 seconds
+
+    </pre>
+</body>
+
+</html>
